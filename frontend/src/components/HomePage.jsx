@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Phone, MapPin, Calendar, CheckCircle, Star, Users, Shield, Clock } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Phone, MapPin, Calendar, CheckCircle, Star, Users, Shield, Clock, ExternalLink, FileText } from "lucide-react";
 import { mockData } from "../data/mockData";
 
 const HomePage = () => {
