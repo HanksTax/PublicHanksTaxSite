@@ -387,14 +387,91 @@ const HomePage = () => {
 
       {/* Mobile CTA Button */}
       <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
-        <Button 
-          onClick={handleCallNow}
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 text-lg shadow-2xl"
-        >
-          <Phone className="h-5 w-5 mr-2" />
-          Call (808) 853-1170
-        </Button>
+        <div className="flex gap-2">
+          <Button 
+            onClick={handleCallNow}
+            className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-4 text-lg shadow-2xl"
+          >
+            <Phone className="h-5 w-5 mr-2" />
+            Call Now
+          </Button>
+          <Dialog open={isPortalModalOpen} onOpenChange={setIsPortalModalOpen}>
+            <DialogTrigger asChild>
+              <Button 
+                variant="outline"
+                className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 py-4 px-4 shadow-2xl"
+              >
+                <FileText className="h-5 w-5" />
+              </Button>
+            </DialogTrigger>
+          </Dialog>
+        </div>
       </div>
+
+      {/* Portal Selection Modal */}
+      <Dialog open={isPortalModalOpen} onOpenChange={setIsPortalModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-center mb-2">
+              Select Your Office Portal
+            </DialogTitle>
+            <p className="text-gray-600 text-center">
+              Choose the portal for the office that handles your tax return
+            </p>
+          </DialogHeader>
+          
+          <div className="space-y-3 mt-4">
+            {portals.map((portal, index) => (
+              <Card 
+                key={index} 
+                className={`cursor-pointer transition-all duration-200 hover:shadow-lg border-2 ${
+                  portal.status === "Open Year-Round" 
+                    ? "border-green-200 hover:border-green-400 bg-green-50/50" 
+                    : "border-gray-200 hover:border-gray-400 opacity-75"
+                }`}
+                onClick={() => handlePortalAccess(portal.url)}
+              >
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        {portal.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-2">
+                        {portal.description}
+                      </p>
+                      <Badge 
+                        className={`text-xs ${
+                          portal.status === "Open Year-Round" 
+                            ? "bg-green-100 text-green-800 border-green-200" 
+                            : "bg-gray-100 text-gray-600 border-gray-200"
+                        }`}
+                      >
+                        {portal.status}
+                      </Badge>
+                    </div>
+                    <ExternalLink className="h-4 w-4 text-gray-400 ml-3" />
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <div className="flex items-start">
+              <Shield className="h-5 w-5 text-blue-600 mr-2 mt-0.5" />
+              <div>
+                <p className="text-sm text-blue-800 font-medium mb-1">
+                  Secure Access
+                </p>
+                <p className="text-xs text-blue-700">
+                  All portals use bank-level encryption to protect your tax documents and personal information.
+                </p>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
