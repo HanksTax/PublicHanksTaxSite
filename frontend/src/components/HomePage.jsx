@@ -136,14 +136,18 @@ const HomePage = () => {
                   Call Now: (808) 853-1170
                 </Button>
                 
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-semibold transition-all duration-300"
-                >
-                  <Calendar className="h-5 w-5 mr-3" />
-                  Schedule Consultation
-                </Button>
+                <Dialog open={isPortalModalOpen} onOpenChange={setIsPortalModalOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="lg"
+                      className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-semibold transition-all duration-300"
+                    >
+                      <FileText className="h-5 w-5 mr-3" />
+                      Access Client Portal
+                    </Button>
+                  </DialogTrigger>
+                </Dialog>
               </div>
 
               <div className="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
