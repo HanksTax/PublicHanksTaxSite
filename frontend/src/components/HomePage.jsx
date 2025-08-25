@@ -8,6 +8,7 @@ import { mockData } from "../data/mockData";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isPortalModalOpen, setIsPortalModalOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -16,6 +17,32 @@ const HomePage = () => {
   const handleCallNow = () => {
     window.location.href = "tel:808-853-1170";
   };
+
+  const handlePortalAccess = (portalUrl) => {
+    window.open(portalUrl, '_blank');
+    setIsPortalModalOpen(false);
+  };
+
+  const portals = [
+    {
+      name: "Kalihi Office Portal",
+      url: "https://hankstax.securefilepro.com/connect/#/login",
+      status: "Open Year-Round",
+      description: "Main office - Currently serving clients"
+    },
+    {
+      name: "Kapolei Office Portal", 
+      url: "https://kapolei.securefilepro.com/connect/#/login",
+      status: "Closed for the year",
+      description: "Seasonal office - Reopens next tax season"
+    },
+    {
+      name: "Pearl City Office Portal",
+      url: "https://pearlcity.securefilepro.com/connect/#/login", 
+      status: "Closed for the year",
+      description: "Seasonal office - Reopens next tax season"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
