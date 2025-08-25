@@ -63,6 +63,19 @@ const HomePage = () => {
                 <MapPin className="h-4 w-4 text-blue-600" />
                 <span className="text-sm font-medium">Kalihi Office Open Year-Round</span>
               </div>
+              
+              <Dialog open={isPortalModalOpen} onOpenChange={setIsPortalModalOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold px-4 py-2"
+                  >
+                    <FileText className="h-4 w-4 mr-2" />
+                    Client Portal
+                  </Button>
+                </DialogTrigger>
+              </Dialog>
+              
               <Button 
                 onClick={handleCallNow}
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 transition-all duration-300 transform hover:scale-105 shadow-lg"
