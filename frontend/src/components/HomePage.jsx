@@ -342,7 +342,7 @@ const HomePage = () => {
                 />
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Hawaii's trusted tax service for over 38 years. 
+                Founded in 2013 by Hank Erwin, who brings over 38 years of tax preparation experience to Hawaii. 
                 Locally owned and operated with a commitment to our community.
               </p>
             </div>
