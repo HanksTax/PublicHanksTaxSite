@@ -43,7 +43,7 @@ export const mockData = {
   whyChooseUs: [
     {
       title: "Local Hawaii Experts",
-      description: "38+ years serving Hawaii families. We understand local tax laws and military benefits unique to our islands.",
+      description: "Founded in 2013 by Hank Erwin, who has 38+ years of tax preparation experience serving Hawaii families. We understand local tax laws and military benefits unique to our islands.",
       icon: Users,
       gradient: "from-blue-500 to-green-500"
     },
