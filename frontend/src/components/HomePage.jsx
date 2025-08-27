@@ -95,7 +95,7 @@ const HomePage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
               <Badge className="bg-blue-100 text-blue-800 border-0 mb-4 px-4 py-2">
-                Hawaii's Trusted Tax Professionals Since 1985
+                Hawaii's Trusted Tax Professionals Since 2013
               </Badge>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
