@@ -379,7 +379,7 @@ const HomePage = () => {
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 Hanks Tax Service. All rights reserved. | Hawaii's Local Tax Professionals Since 1985
+              © 2024 Hanks Tax Service. All rights reserved. | Hawaii's Local Tax Professionals Since 2013
             </p>
           </div>
         </div>
